@@ -41,6 +41,7 @@
           </v-card></v-col
         >
       </v-row>
+ 
     </v-container>
     <v-container>
       <v-divider />
@@ -62,6 +63,13 @@
           </v-card>
         </v-col>
       </v-row>
+      <v-row class="justify-center">
+        <v-col cols="2">
+          <v-btn prepend-icon="mdi-download" size="default" color="primary" target="_blank" href="https://guymis.servirglobal.net/download/">Download Data</v-btn>
+
+        </v-col>
+      </v-row>
+     
     </v-container>
   </div>
 </template>
@@ -70,7 +78,6 @@
 import { ref } from "vue";
 import HighCharts from 'highcharts';
 import exportingInit from 'highcharts/modules/exporting'
-import HighchartsExporting from 'highcharts/modules/exporting';
 import { definePageMeta } from "#imports";
 definePageMeta({layout:'custom'})
 

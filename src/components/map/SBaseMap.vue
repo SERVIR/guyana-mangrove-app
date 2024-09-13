@@ -10,7 +10,7 @@
         <b>{{ expanded ? "BaseMap" : " " }}</b>
       </v-expansion-panel-title>
       <v-expansion-panel-text>
-        <v-card width="700px" variant="flat">
+        <v-card class="mx-auto" :width="smAndDown?'300px':'700px'" variant="flat">
          <base-layers :lmap="lmap"/>
         </v-card>
       </v-expansion-panel-text>
@@ -20,6 +20,9 @@
    
    <script setup lang="ts">
    import BaseLayers from './BaseLayers.vue';
+
+   import { useDisplay } from "vuetify";
+   const { smAndDown } = useDisplay();
    
    const props = defineProps<{
      lmap: any; 

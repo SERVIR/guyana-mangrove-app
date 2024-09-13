@@ -1,6 +1,6 @@
 <template>
   <div style="min-height: calc(100vh - 112px)">
-    <v-container class="mt-5">
+    <v-container>
       <v-row class="">
         <v-col
           v-for="(key, index) in analytics"
@@ -11,15 +11,14 @@
             class="pa-3 v-card--material-stats"
             variant="elevated"
             height="130px"
-
           >
             <div class="d-flex flex-row">
               <div class="d-flex align-center justify-start">
-                <v-icon size="50" :color="key.color" >{{ key.icon }}</v-icon>
+                <v-icon size="50" :color="key.color">{{ key.icon }}</v-icon>
               </div>
               <div class="d-flex align-center justify-end flex-grow-1">
                 <div class="ml-auto text-left">
-                  <h3 class=" text-primary-darken-1">
+                  <h3 class="text-primary-darken-1">
                     {{ key.data }}
                   </h3>
                   <div class="body-3 grey--text font-weight-light text-primary">
@@ -34,28 +33,27 @@
 
             <!-- Footer Section -->
             <div class="d-flex align-center">
-              <span class="caption grey--text font-weight text-primary-darken-1">{{
-                key.title
-              }}</span>
+              <span
+                class="caption grey--text font-weight text-primary-darken-1"
+                >{{ key.title }}</span
+              >
             </div>
           </v-card></v-col
         >
       </v-row>
- 
     </v-container>
     <v-container>
       <v-divider />
 
-
-      <v-row class="mt-5">
-        <v-col>
+      <v-row no-gutters>
+        <v-col cols="12" sm="6">
           <v-card variant="flat">
             <v-card-item>
               <highcharts :options="chartOptions1"></highcharts>
             </v-card-item>
           </v-card>
         </v-col>
-        <v-col>
+        <v-col cols="12" sm="6">
           <v-card variant="flat">
             <v-card-item>
               <highcharts :options="chartOptions"></highcharts>
@@ -64,32 +62,34 @@
         </v-col>
       </v-row>
       <v-row class="justify-center">
-        <v-col cols="2">
-          <v-btn prepend-icon="mdi-download" size="default" color="primary" target="_blank" href="https://guymis.servirglobal.net/download/">Download Data</v-btn>
-
-        </v-col>
+        <v-btn
+          prepend-icon="mdi-download"
+          size="default"
+          color="primary"
+          target="_blank"
+          href="https://guymis.servirglobal.net/download/"
+          >Download Data</v-btn
+        >
       </v-row>
-     
     </v-container>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
-import HighCharts from 'highcharts';
-import exportingInit from 'highcharts/modules/exporting'
+import HighCharts from "highcharts";
+import exportingInit from "highcharts/modules/exporting";
 import { definePageMeta } from "#imports";
-definePageMeta({layout:'custom'})
+definePageMeta({ layout: "custom" });
 
-exportingInit(HighCharts)
-
+exportingInit(HighCharts);
 
 const chartOptions = ref({
   chart: {
     type: "bar",
-    height:500,
+    height: 500,
   },
-  
+
   title: {
     text: "Guyana's Coastal Regions Mangrove Change",
     align: "center",
@@ -133,15 +133,9 @@ const chartOptions = ref({
     },
   },
   legend: {
-    layout: "vertical",
-    align: "right",
-    verticalAlign: "top",
-    x: -40,
-    y: 80,
-    floating: true,
-    borderWidth: 1,
-    backgroundColor: "#FFFFFF",
-    shadow: true,
+    layout: "horizontal",
+    align: "center",
+   
   },
   credits: {
     enabled: false,
@@ -173,7 +167,7 @@ const chartOptions = ref({
 const chartOptions1 = ref({
   chart: {
     type: "column",
-    height:500
+    height: 500,
   },
   title: {
     text: "Guyana's Coastal Region Mangrove Extent",
@@ -215,17 +209,17 @@ const chartOptions1 = ref({
     {
       name: "2010",
       data: [554, 4818, 1303, 93, 1227, 1907],
-      color:'#FF7F50'
+      color: "#FF7F50",
     },
     {
       name: "2015",
       data: [18641, 4938, 1254, 172, 1337, 2309],
-      color:'#66FFCC'
+      color: "#66FFCC",
     },
     {
       name: "2020",
       data: [13407, 4251, 848, 249, 1453, 1146],
-      color:'#66CCFF'
+      color: "#66CCFF",
     },
   ],
 });
@@ -235,42 +229,42 @@ const analytics = [
     data: "21,354",
     unit: "Hectare",
     title: "Mangrove Extent (2020)",
-    color:'#228B22'
+    color: "#228B22",
   },
   {
     icon: "mdi-trending-down",
     data: "12,142",
     unit: "Hectare",
     title: "Mangrove Losses (2015-2020)",
-    color:'#FF7F50'
+    color: "#FF7F50",
   },
   {
     icon: "mdi-trending-up",
     data: "4,845",
     unit: "Hectare",
     title: "Mangrove Gains (2015-2020)",
-    color:'#9ACD32'
+    color: "#9ACD32",
   },
   {
     icon: "mdi-restore",
     data: "32",
     unit: "",
     title: "Restoration Projects (2010-2020)",
-    color:'#20B2AA'
+    color: "#20B2AA",
   },
   {
     icon: "mdi-sprout",
     data: "19",
     unit: "",
     title: "Seedling Plantations",
-    color:'#228B22'
+    color: "#228B22",
   },
   {
     icon: "mdi-tree",
     data: "13",
     unit: "",
     title: "Green-Grey Infrastructure",
-    color:'green'
+    color: "green",
   },
 ];
 </script>

@@ -9,8 +9,8 @@
         >
           <b>{{ expanded ? "Map Control" : " " }}</b>
         </v-expansion-panel-title>
-        <v-expansion-panel-text>
-          <v-card width="400px" variant="flat">
+        <v-expansion-panel-text >
+          <v-card :width="smAndDown ? '280px' : '400px'" variant="flat" max-height="80vh" class="overflow-auto">
             <v-tabs color="primary" density="compact" grow v-model="tab">
               <v-tab
                 prepend-icon="mdi-filter"
@@ -90,6 +90,9 @@
 <script setup lang="ts">
 import { ref, watch, defineEmits, defineProps } from "vue";
 import BaseLayers from "./BaseLayers.vue";
+
+import { useDisplay } from "vuetify";
+const { smAndDown } = useDisplay();
 
 const props = withDefaults(
   defineProps<{
@@ -177,6 +180,18 @@ watch(
   compare,
   () => {
     emit("updateComparison", { compare: compare.value });
+  },
+  { immediate: true }
+);
+
+watch(
+  smAndDown,
+  () => {
+    if (smAndDown.value) {
+      panel.value = [];
+    } else {
+      panel.value = [1, 0];
+    }
   },
   { immediate: true }
 );

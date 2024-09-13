@@ -1,11 +1,10 @@
 <template>
   <v-row>
-    <v-col v-for="(layer, index) in layers" :key="index" cols="4">
+    <v-col v-for="(layer, index) in layers" :key="index" cols="4" class=" pa-1">
       <v-hover v-slot="{ isHovering, props }">
         <v-card
-          class="mx-auto"
+          class="pa-0"
           color="grey-lighten-4"
-          max-width="600"
           v-bind="props"
           @click="changeBaseLayer(layer.title)"
         >
@@ -13,7 +12,7 @@
             <v-expand-transition>
               <div
                 v-if="isHovering"
-                class="d-flex transition-fast-in-fast-out bg-primary-darken-1 v-card--reveal text-h7 align-center justify-center"
+                class="d-flex transition-fast-in-fast-out bg-primary-darken-1 v-card--reveal text-h7 align-center justify-center "
                 style="height: 100%"
               >
                 {{ layer.title }}
@@ -112,7 +111,6 @@ const layers = [
 
 
 const changeBaseLayer = (layerTitle) => {
-  console.log("props",props.lmap)
   if (!props.lmap) return;
 
   layers.forEach((layer) => {

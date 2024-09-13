@@ -40,7 +40,7 @@
           <s-base-map :lmap="lmap" />
         </l-control>
 
-        <l-control-zoom :position="compare ? 'bottomleft' : 'topright'" />
+        <l-control-zoom :position="compare ? 'bottomleft' : 'topright'" v-if="!smAndDown"/>
 
         <l-tile-layer
           url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
@@ -141,8 +141,10 @@ import * as directives from "vuetify/directives";
 import { createVuetify } from "vuetify";
 
 import "~/utils/LControlSideBySide"; // Adjust the import path to your JS file
+import { useDisplay } from "vuetify";
 
 definePageMeta({ layout: "custom" });
+const { smAndDown } = useDisplay();
 
 const vuetify = createVuetify({
   components,

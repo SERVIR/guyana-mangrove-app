@@ -25,6 +25,8 @@
 
 <script setup lang="ts">
 import LegendItem from "./LegendItem.vue";
+import { useDisplay } from "vuetify";
+const { smAndDown } = useDisplay();
 const panel = ref([1, 0]);
 
 const legends = [
@@ -34,6 +36,18 @@ const legends = [
   { color: "#20B2AA", name: "Restored Area" },
   { color: "#DAA520", name: "Selected Polygon" },
 ];
+
+watch(
+  smAndDown,
+  () => {
+    if (smAndDown.value) {
+      panel.value = [];
+    } else {
+      panel.value = [1, 0];
+    }
+  },
+  { immediate: true }
+);
 </script>
 
 <style scoped></style>

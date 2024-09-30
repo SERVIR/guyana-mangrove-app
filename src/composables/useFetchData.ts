@@ -10,7 +10,7 @@ export function useFetchData() {
 
     try {
       const queryString = new URLSearchParams(params as any).toString();
-      url="https://guymis.servirglobal.net/map/get-extent-layer/";
+      url="https://guy-mangroves.servirglobal.net/map/get-extent-layer/";
       const fullUrl = `${url}?${queryString}`;
 
       const {data} = await useFetch(fullUrl, {

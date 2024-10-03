@@ -67,7 +67,7 @@
           size="default"
           color="primary"
           target="_blank"
-          href="https://guymis.servirglobal.net/download/"
+          href="https://guy-mangroves.servirglobal.net/download/"
           >Download Data</v-btn
         >
       </v-row>

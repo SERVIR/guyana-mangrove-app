@@ -25,6 +25,7 @@ npm run preview
 ## Software Developers
 - [Deepak Shah (NASA/USRA)](https://github.com/deepak-shah-np)
 - [Billy Ashmall (NASA/USRA)](https://github.com/billyz313)
+- [Alex Goberna (NASA/USRA)](https://github.com/agoberna)
 
 
 

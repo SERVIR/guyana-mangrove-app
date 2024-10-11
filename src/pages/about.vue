@@ -53,13 +53,13 @@
           :key="index"
           cols="12"
           sm="6"
-          md="3"
+          md="2"
         >
           <v-card
             class="mx-auto d-flex flex-column align-center"
             variant="tonal"
             elevation="3"
-            rounded="lg"
+            rounded="md"
           >
             <v-avatar
               color="grey"
@@ -159,10 +159,18 @@ const teams = [
       "Zola Narine is the Monitoring/Geographical Information System (GIS) Officer for NAREI’s Mangrove Department. Her work involves management of the Mangrove GIS database and mapping of mangrove forest in Guyana. She holds a Certificate in Agriculture, Diploma in Forestry and BSc in Forestry.",
   },
   {
+    name: "Deepak Shah",
+    image: "/person/deepak.jpg",
+    affiliation: "SERVIR SCO",
+    position: "Software Developer",
+    description:
+      "Deepak is a part of the Geospatial Information Technology team at the SERVIR Science Coordination Office. As a full-stack software engineer, he navigates the entire software development lifecycle, from concept to completion",
+  },
+  {
     name: "Alexandre Goberna",
     image: "/person/AlexGoberna.jpg",
     affiliation: "SERVIR SCO",
-    position: "Software Development Lead for the Guyana Mangroves Monitor",
+    position: "Software Developer",
     description:
       "Alex is a member of the SERVIR Science Coordination Office's Geospatial Information Technology team. As a fullstack software engineer Alex assists in development and deployment of applications for the SERVIR member hubs.",
   },

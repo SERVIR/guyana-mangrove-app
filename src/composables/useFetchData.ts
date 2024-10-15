@@ -9,8 +9,11 @@ export function useFetchData() {
     error.value = null;
 
     try {
+      const runtime = useRuntimeConfig();
+      const baseUrl = runtime.public.apiBaseUrl;
       const queryString = new URLSearchParams(params as any).toString();
-      url="https://guy-mangroves.servirglobal.net/map/get-extent-layer/";
+      url=`${baseUrl}/map/get-extent-layer/`;
+      console.log("url",url)
       const fullUrl = `${url}?${queryString}`;
 
       const {data} = await useFetch(fullUrl, {

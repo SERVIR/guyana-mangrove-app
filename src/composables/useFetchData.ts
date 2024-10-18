@@ -13,7 +13,6 @@ export function useFetchData() {
       const baseUrl = runtime.public.apiBaseUrl;
       const queryString = new URLSearchParams(params as any).toString();
       url=`${baseUrl}/map/get-extent-layer/`;
-      console.log("url",url)
       const fullUrl = `${url}?${queryString}`;
 
       const {data} = await useFetch(fullUrl, {

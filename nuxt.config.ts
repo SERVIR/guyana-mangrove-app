@@ -6,21 +6,24 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   app: {
     head: {
-      link: [{ rel: 'icon', type: 'image/png', href: '/logos/logo.png' }],
-      title: 'GuyMIS', // Used in the tab-preview
+      link: [{ rel: "icon", type: "image/png", href: "/logos/logo.png" }],
+      title: "GuyMIS", // Used in the tab-preview
     },
   },
   modules: ["vuetify-nuxt-module", "@nuxtjs/leaflet"],
-  plugins: [
-    { src: "~/plugins/highcharts.client.ts", mode: "client" },
-  ],
+  plugins: [{ src: "~/plugins/highcharts.client.ts", mode: "client" }],
+  runtimeConfig: {
+    public: {
+      apiBaseUrl: "https://guy-mangroves.servirglobal.net",
+    },
+  },
   vuetify: {
     moduleOptions: {
       /* module specific options */
     },
     vuetifyOptions: {
       /* vuetify options */
-      customProperties: true
-    }
-  }
+      customProperties: true,
+    },
+  },
 });

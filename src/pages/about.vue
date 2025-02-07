@@ -37,7 +37,7 @@
         Disclaimer
       </v-card-title>
       <v-card-text class="readable-text">
-        SERVIR Program, NASA, USAID, and SERVIR partner organizations make no
+        SERVIR Program, NASA, and SERVIR partner organizations make no
         express or implied warranty of this application as to the
         merchantability or fitness for any particular purpose. Neither the US
         Government nor its contractors shall be liable for special,

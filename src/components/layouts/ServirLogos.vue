@@ -5,9 +5,6 @@
   <v-row>
     <v-col class="d-flex justify-start align-center">
       <v-sheet class="ma-1">
-        <v-img src="/logos/usaid.jpg"  :width="smAndDown?60:120"/>
-      </v-sheet>
-      <v-sheet class="ma-1">
         <v-img src="/logos/nasa.jpg"  :width="smAndDown?30:60"/>
 
       </v-sheet>
